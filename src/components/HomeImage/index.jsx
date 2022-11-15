@@ -4,7 +4,7 @@ import image from "../../assets/illustration.svg"
 const MainImage = () => {
     return ( 
         <>
-        <img src={image} alt="logo" />
+        <img draggable="false" src={image} alt="logo" />
         </>
      );
 }
