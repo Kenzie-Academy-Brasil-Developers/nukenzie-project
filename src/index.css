@@ -26,6 +26,12 @@ body {
     font-family: var(--font-family);
 }
 
+li,
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
 .container {
     width: 1200px;
     margin: auto;
