@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../styles/buttons.css';
 
-const DefaultButton = ({ value, children }) => {
+const DefaultButton = ({ type = 'button', value, children }) => {
     return (
         <>
-            <button className='default-button' onClick={children}>{value}</button>
+            <button type={type} className='default-button' onClick={children}>{value}</button>
         </>
     );
 }
