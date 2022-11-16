@@ -61,3 +61,23 @@
     cursor: pointer;
     transition: .3s;
 }
+
+.trash-button {
+    width: 22px;
+    height: 22px;
+    background-color: var(--color-grey-2);
+    border: none;
+    border-radius: .1538rem;
+    background-image: url(../assets/trash-off.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.trash-button:hover {
+    background-image: url(../assets/trash-on.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #343A40;
+}
