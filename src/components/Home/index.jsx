@@ -4,7 +4,7 @@ import MainImage from '../HomeImage';
 import WhiteLogo from '../WhiteLogo';
 import "./index.css"
 
-const Home = () => {
+const Home = ({ setIsLogged }) => {
     return (
         <>
             <div className='background'>
@@ -14,7 +14,10 @@ const Home = () => {
                         <WhiteLogo />
                         <h2>Centralize o controle das suas finanças</h2>
                         <span>de forma rápida e segura</span>
-                        <DefaultButton value='Iniciar' />
+                        <DefaultButton 
+                        value='Iniciar'
+                        target={setIsLogged}
+                        />
                     </section>
                     <section className="right">
                         <MainImage />
