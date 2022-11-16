@@ -1,9 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import React, { useState } from 'react';
 import './App.css'
+import Dashboard from './components/Dashboard';
+import Home from './components/Home';
 
 function App() {
-  return ()
+
+  const [isLogged, setIsLogged] = useState(false);
+
+  return (
+    <>
+      {isLogged ?
+        <Home setIsLogged={setIsLogged} />
+        :
+        <Dashboard setIsLogged={setIsLogged} />
+      }
+    </>
+  );
 }
 
 export default App
