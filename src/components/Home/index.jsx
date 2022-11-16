@@ -5,6 +5,9 @@ import WhiteLogo from '../WhiteLogo';
 import "./index.css"
 
 const Home = ({ setIsLogged }) => {
+
+    const isLoggedBody = () => setIsLogged(false);
+
     return (
         <>
             <div className='background'>
@@ -16,7 +19,7 @@ const Home = ({ setIsLogged }) => {
                         <span>de forma rápida e segura</span>
                         <DefaultButton 
                         value='Iniciar'
-                        target={setIsLogged}
+                        target={isLoggedBody}
                         />
                     </section>
                     <section className="right">
