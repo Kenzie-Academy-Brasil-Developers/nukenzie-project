@@ -1,18 +1,21 @@
 import React from 'react';
 import GreyLogo from '../GreyLogo';
-import "../../styles/buttons.css";
-import "./index.css";
+import SecondaryButton from '../SecondaryButton';
+import '../../styles/buttons.css';
+import './index.css';
 
 const Header = ({ target }) => {
     return (
         <>
             <header>
-                <div className="menu container">
+                <div className='menu container'>
                     <GreyLogo />
                     <nav>
                         <ul>
                             <li>
-                                <button className='secondary-button' onClick={() => target(true)}>Inicio</button>
+                                <SecondaryButton value='Inicio'>
+                                    {() => target(true)}
+                                </SecondaryButton>
                             </li>
                         </ul>
                     </nav>
