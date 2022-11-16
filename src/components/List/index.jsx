@@ -1,5 +1,6 @@
 import React from 'react';
 import SecondaryButton from '../SecondaryButton';
+import './index.css';
 
 const List = () => {
     return ( 
