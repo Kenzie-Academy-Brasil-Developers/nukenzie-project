@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <>
             <div className='background'>
-                <div className='container'>
+                <div className='main-content container'>
 
                     <section className="left">
                         <WhiteLogo />
