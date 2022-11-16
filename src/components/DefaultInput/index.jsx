@@ -6,7 +6,7 @@ const DefaultInput = ({ type, placeHolder, value, label, helperText, image }) =>
         <>
             <div className='defaultInput'>
                 {label && <label htmlFor={value}>{label}</label>}
-                <input className={image} type={type} placeholder={placeHolder} name={value} id={value} required />
+                <input className={image} type={type} placeholder={placeHolder} name={value} id={value} />
                 {helperText && <span>{helperText}</span>}
             </div>
         </>
