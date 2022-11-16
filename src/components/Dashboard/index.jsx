@@ -6,7 +6,9 @@ const Dashboard = ({ setIsLogged }) => {
     return (
         <>
             <Header target={setIsLogged} />
-            <Form/>
+            <main className='container'>
+                <Form />
+            </main>
         </>
     );
 }
