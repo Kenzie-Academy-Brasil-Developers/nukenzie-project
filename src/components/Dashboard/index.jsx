@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Card from '../Card';
 import EmptyBox from '../EmptyBox';
 import Form from '../Form';
@@ -8,6 +9,8 @@ import './index.css';
 
 const Dashboard = ({ setIsLogged, listTransactions, setListTransactions }) => {
 
+    const [handleFilter, setHandleFilter] = useState([]);
+    
     return (
         <>
             <Header target={setIsLogged} />
@@ -15,20 +18,22 @@ const Dashboard = ({ setIsLogged, listTransactions, setListTransactions }) => {
                 <section className='left-position'>
                     <Form
                         data={listTransactions}
-                        callback={setListTransactions}
+                        setListTransactions={setListTransactions}
+                        setHandleFilter={setHandleFilter}
                     />
                     {listTransactions.length ? <TotalMoney data={listTransactions} /> : false}
                 </section>
                 <section className='right-position'>
                     <List
                         data={listTransactions}
-                        callback={setListTransactions}
+                        callback={setHandleFilter}
+                        activeButton={handleFilter.length ? handleFilter[0].type : 'Todos'}
                     />
                     {!listTransactions.length ?
                         <EmptyBox />
                         :
                         <Card
-                            data={listTransactions}
+                            data={handleFilter.length ? handleFilter : listTransactions}
                             callback={setListTransactions}
                         />
                     }

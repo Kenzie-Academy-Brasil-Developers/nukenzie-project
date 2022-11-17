@@ -4,7 +4,7 @@ import DefaultInput from '../DefaultInput';
 import DefaultSelect from '../DefaultSelect';
 import './index.css'
 
-const Form = ({ data, callback }) => {
+const Form = ({ data, setListTransactions, setHandleFilter }) => {
 
     const handleForm = (e) => {
         e.preventDefault();
@@ -21,15 +21,17 @@ const Form = ({ data, callback }) => {
             form[2].value === "Saída"
                 ? obj['value'] = parseInt(-form[1].value)
                 : obj['value'] = parseInt(form[1].value);
-                
-            callback((old) => [...old, obj]);
+
+            setListTransactions((old) => [...old, obj]);
+            setHandleFilter([]);
+            e.target.reset();
         }
     }
 
     return (
         <>
             <div className='main-form'>
-                <form onSubmit={(e) => handleForm(e)}>
+                <form onSubmit={handleForm}>
                     <DefaultInput
                         type='text'
                         placeHolder='Digite aqui sua descrição'

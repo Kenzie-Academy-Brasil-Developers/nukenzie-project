@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../styles/buttons.css';
 
-const SecondaryButton = ({ value, callback, id }) => {
+const SecondaryButton = ({ value, callback, id, active }) => {
     return (
         <>
-            <button className='secondary-button' id={id} onClick={(e) => callback(e)}>{value}</button>
+            <button className={active ? 'active-button' : 'secondary-button'} id={id} onClick={(e) => callback(e)}>{value}</button>
         </>
     );
 }
