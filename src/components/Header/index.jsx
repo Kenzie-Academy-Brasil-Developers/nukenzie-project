@@ -5,6 +5,9 @@ import '../../styles/buttons.css';
 import './index.css';
 
 const Header = ({ target }) => {
+
+    const backToHome = () => target(true);
+
     return (
         <>
             <header>
@@ -13,9 +16,7 @@ const Header = ({ target }) => {
                     <nav>
                         <ul>
                             <li>
-                                <SecondaryButton value='Inicio'>
-                                    {() => target(true)}
-                                </SecondaryButton>
+                                <SecondaryButton value='Inicio' callback={backToHome} />
                             </li>
                         </ul>
                     </nav>
