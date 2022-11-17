@@ -2,9 +2,15 @@ import React from 'react';
 import DefaultButton from '../DefaultButton';
 import DefaultInput from '../DefaultInput';
 import DefaultSelect from '../DefaultSelect';
+import { toast, cssTransition } from 'react-toastify';
 import './index.css'
 
 const Form = ({ data, setListTransactions, setHandleFilter }) => {
+
+    const swirl = cssTransition({
+        enter: "swirl-in-fwd",
+        exit: "swirl-out-bck"
+    });
 
     const handleForm = (e) => {
         e.preventDefault();
@@ -25,6 +31,13 @@ const Form = ({ data, setListTransactions, setHandleFilter }) => {
             setListTransactions((old) => [...old, obj]);
             setHandleFilter([]);
             e.target.reset();
+        } else {
+            toast.warn('Ainda há espaços em branco!', {
+                transition: swirl,
+            });
+            setTimeout(() => {
+                toast.dismiss()
+            }, 1500);
         }
     }
 
