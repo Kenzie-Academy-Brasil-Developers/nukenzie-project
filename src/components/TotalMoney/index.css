@@ -1,0 +1,35 @@
+.total-money {
+    height: 96px;
+    width: 100%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey-2);
+    border-radius: 4px;
+    margin-top: 16px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-money>span {
+    color: var(--color-primary-1);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.total-money .desc-value {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.total-money .desc-value h4 {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-grey-4);
+}
+
+.total-money .desc-value span {
+    color: var(--color-grey-3);
+    font-weight: 400;
+    font-size: .75rem;
+}
