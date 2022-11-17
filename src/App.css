@@ -1,0 +1,17 @@
+@media (max-width: 990px) {
+    .main-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .main-wrapper .left-position {
+        width: 100%;
+    }
+
+    .main-form form {
+        width: 100% !important;
+    }
+
+    .right {
+        display: none;
+    }
+}
