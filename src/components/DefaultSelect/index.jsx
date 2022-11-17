@@ -7,7 +7,6 @@ const DefaultSelect = ({ mainValue, name, children }) => {
             <div className='defaultInput'>
                 <label htmlFor={name}>{mainValue}</label>
                 <select className='default-select' name={name} id={name} >
-                    <option selected disabled value=''>{mainValue}</option>
                     {children}
                 </select>
             </div>
