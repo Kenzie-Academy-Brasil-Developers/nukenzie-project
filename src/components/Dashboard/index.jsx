@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Card from '../Card';
 import EmptyBox from '../EmptyBox';
 import Form from '../Form';
@@ -7,9 +6,7 @@ import List from '../List';
 import TotalMoney from '../TotalMoney';
 import './index.css';
 
-const Dashboard = ({ setIsLogged }) => {
-
-    const [listTransactions, setListTransactions] = useState([]);
+const Dashboard = ({ setIsLogged, listTransactions, setListTransactions }) => {
 
     return (
         <>
