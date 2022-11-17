@@ -5,14 +5,16 @@ import Home from './components/Home';
 
 function App() {
 
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
+
+  const [listTransactions, setListTransactions] = useState([]);
 
   return (
     <>
       {isLogged ?
         <Home setIsLogged={setIsLogged} />
         :
-        <Dashboard setIsLogged={setIsLogged} />
+        <Dashboard setIsLogged={setIsLogged} listTransactions={listTransactions} setListTransactions={setListTransactions} />
       }
     </>
   );
