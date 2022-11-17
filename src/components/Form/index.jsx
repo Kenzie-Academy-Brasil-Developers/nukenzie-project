@@ -4,11 +4,32 @@ import DefaultInput from '../DefaultInput';
 import DefaultSelect from '../DefaultSelect';
 import './index.css'
 
-const Form = () => {
+const Form = ({ data, callback }) => {
+
+    const handleForm = (e) => {
+        e.preventDefault();
+
+        const form = [...e.target].slice(0, -1);
+        const obj = {};
+        const check = form.map(item => item.value !== '' ? true : false);
+
+        if (!check.includes(false)) {
+            obj['id'] = data.length;
+            obj['description'] = form[0].value;
+            obj['type'] = form[2].value;
+
+            form[2].value === "Saída"
+                ? obj['value'] = parseInt(-form[1].value)
+                : obj['value'] = parseInt(form[1].value);
+                
+            callback((old) => [...old, obj]);
+        }
+    }
+
     return (
         <>
             <div className='main-form'>
-                <form>
+                <form onSubmit={(e) => handleForm(e)}>
                     <DefaultInput
                         type='text'
                         placeHolder='Digite aqui sua descrição'
@@ -26,12 +47,15 @@ const Form = () => {
                         />
 
                         <DefaultSelect mainValue='Tipo de valor' name='type'>
-                            <option value="entrada">Entrada</option>
-                            <option value="saida">Saída</option>
+                            <option value="Entrada">Entrada</option>
+                            <option value="Saída">Saída</option>
                         </DefaultSelect>
                     </div>
-                    
-                    <DefaultButton type='submit' value='Inserir valor'></DefaultButton>
+
+                    <DefaultButton
+                        type='submit'
+                        value='Inserir valor'
+                    />
                 </form>
             </div>
         </>
