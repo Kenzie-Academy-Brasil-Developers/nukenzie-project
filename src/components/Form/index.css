@@ -1,0 +1,23 @@
+.main-form form {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey-2);
+    border-radius: .25rem;
+    width: 363px;
+    padding: 2.375rem 1.5625rem;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.main-form form .footer-form {
+    display: flex;
+    gap: 36px;
+}
+
+.main-form form .footer-form input {
+    width: 100%;
+}
+
+.main-form form .footer-form select {
+    width: 100%;
+}
