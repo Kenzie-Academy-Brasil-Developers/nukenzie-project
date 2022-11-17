@@ -11,6 +11,8 @@ const Dashboard = ({ setIsLogged, listTransactions, setListTransactions }) => {
 
     const [handleFilter, setHandleFilter] = useState([]);
     
+    localStorage.setItem('userData', JSON.stringify(listTransactions));
+
     return (
         <>
             <Header target={setIsLogged} />
@@ -34,7 +36,9 @@ const Dashboard = ({ setIsLogged, listTransactions, setListTransactions }) => {
                         :
                         <Card
                             data={handleFilter.length ? handleFilter : listTransactions}
-                            callback={setListTransactions}
+                            setHandleFilter={setHandleFilter}
+                            setListTransactions={setListTransactions}
+                            listTransactions={listTransactions}
                         />
                     }
                 </section>
