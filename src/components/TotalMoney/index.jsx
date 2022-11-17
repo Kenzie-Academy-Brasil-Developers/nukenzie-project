@@ -9,7 +9,7 @@ const TotalMoney = ({ data }) => {
                 <span>O valor se refere ao saldo</span>
             </div>
             <span>{data.reduce((acc, curr) => acc + curr.value, 0)
-            .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }).replace('-', '')}</span>
+            .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
         </div>
     );
 }
