@@ -1,0 +1,13 @@
+@keyframes showContent {
+    from {
+        z-index: -100;
+        transform: translateX(-70px);
+        opacity: 0;
+    }
+
+    to {
+        z-index: 100;
+        opacity: 1;
+        transform: translate(0);
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import TrashButton from '../TrashButton';
+import '../../styles/animations.css'
 import './index.css';
 
 const Card = ({ data, callback }) => {
@@ -16,7 +17,7 @@ const Card = ({ data, callback }) => {
             <ul className='list-card'>
                 {data.map(({ description, type, value, id }) => {
                     return (
-                        <li key={id} className={type.toLowerCase() == 'entrada' ? 'entry-type' : false}>
+                        <li key={id} className={type.toLowerCase() == 'entrada' ? 'card entry-type' : 'card'}>
                             <div className="left-card">
                                 <h4>{description}</h4>
                                 <span>{type}</span>
