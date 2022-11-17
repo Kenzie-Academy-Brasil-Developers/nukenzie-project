@@ -3,13 +3,14 @@ import TrashButton from '../TrashButton';
 import '../../styles/animations.css'
 import './index.css';
 
-const Card = ({ data, callback }) => {
+const Card = ({ data, setHandleFilter, setListTransactions, listTransactions }) => {
 
     const removeCard = (e) => {
-        const elemIndex = data.findIndex((elem) => elem.id === parseInt(e.target.id));
-        const newData = [...data];
+        const elemIndex = listTransactions.findIndex((elem) => elem.id === parseInt(e.target.id));
+        const newData = [...listTransactions];
         newData.splice(elemIndex, 1);
-        callback(newData);
+        setListTransactions(newData);
+        setHandleFilter([]);
     }
 
     return (

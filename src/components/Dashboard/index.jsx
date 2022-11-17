@@ -34,7 +34,9 @@ const Dashboard = ({ setIsLogged, listTransactions, setListTransactions }) => {
                         :
                         <Card
                             data={handleFilter.length ? handleFilter : listTransactions}
-                            callback={setListTransactions}
+                            setHandleFilter={setHandleFilter}
+                            setListTransactions={setListTransactions}
+                            listTransactions={listTransactions}
                         />
                     }
                 </section>
