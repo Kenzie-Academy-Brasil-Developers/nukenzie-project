@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../styles/buttons.css';
 
-const TrashButton = ({type = 'button', children}) => {
-    return ( <button type={type} className='trash-button' onClick={children}></button> );
+const TrashButton = ({type = 'button', callback, id}) => {
+    return ( <button type={type} className='trash-button' id={id} onClick={(e) => callback(e)}></button> );
 }
  
 export default TrashButton;
