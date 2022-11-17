@@ -11,6 +11,8 @@ const Dashboard = ({ setIsLogged, listTransactions, setListTransactions }) => {
 
     const [handleFilter, setHandleFilter] = useState([]);
     
+    localStorage.setItem('userData', JSON.stringify(listTransactions));
+
     return (
         <>
             <Header target={setIsLogged} />
